@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<Base title="Projects — Hang Yang" description="Selected data science and information systems work.">
+  <h2 class="text-xl font-semibold tracking-tight">Projects</h2>
+
+  {
+    projects.length === 0 ? (
+      <p class="mt-6 text-sm text-neutral-500">Nothing published yet.</p>
+    ) : (
+      <ul class="mt-8 space-y-10">
+        {projects.map((p) => (
+          <li>
+            <a href={`/projects/${p.id}`} class="group block">
+              <h3 class="font-medium group-hover:underline">{p.data.title}</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-neutral-600">
+                {p.data.summary}
+              </p>
+            </a>
+            <div class="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-neutral-400">
+              <time datetime={p.data.date.toISOString()}>
+                {p.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
+              </time>
+              {p.data.tags.map((t) => <span>{t}</span>)}
+            </div>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</Base>

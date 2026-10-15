@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const featured = (await getCollection('projects'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 2);
+---
+
+<Base title="Hang Yang" home>
+  {
+    featured.length > 0 && (
+      <section>
+        <h2 class="text-sm font-medium tracking-wide text-neutral-400 uppercase">
+          Selected work
+        </h2>
+        <ul class="mt-6 space-y-6">
+          {featured.map((p) => (
+            <li>
+              <a href={`/projects/${p.id}`} class="font-medium hover:underline">
+                {p.data.title}
+              </a>
+              <p class="mt-1 text-sm text-neutral-600">{p.data.summary}</p>
+            </li>
+          ))}
+        </ul>
+        <a href="/projects" class="mt-8 inline-block text-sm text-neutral-500 hover:text-neutral-900">
+          All projects →
+        </a>
+      </section>
+    )
+  }
+</Base>

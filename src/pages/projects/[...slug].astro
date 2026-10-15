@@ -1,0 +1,78 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((p) => ({
+    params: { slug: p.id },
+    props: { project: p },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const d = project.data;
+---
+
+<Base title={`${d.title} — Hang Yang`} description={d.summary}>
+  <a href="/projects" class="text-sm text-neutral-500 hover:text-neutral-900">
+    ← Projects
+  </a>
+
+  <h2 class="mt-6 text-xl leading-snug font-semibold tracking-tight">
+    {d.title}
+  </h2>
+
+  <p class="mt-3 max-w-[60ch] leading-relaxed text-neutral-600">
+    {d.summary}
+  </p>
+
+  <dl class="mt-6 space-y-1.5 text-sm">
+    <div class="flex gap-3">
+      <dt class="w-16 shrink-0 text-neutral-400">Date</dt>
+      <dd class="text-neutral-600">
+        {d.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
+      </dd>
+    </div>
+    {
+      d.role && (
+        <div class="flex gap-3">
+          <dt class="w-16 shrink-0 text-neutral-400">Role</dt>
+          <dd class="text-neutral-600">{d.role}</dd>
+        </div>
+      )
+    }
+    {
+      d.tags.length > 0 && (
+        <div class="flex gap-3">
+          <dt class="w-16 shrink-0 text-neutral-400">Stack</dt>
+          <dd class="text-neutral-600">{d.tags.join(', ')}</dd>
+        </div>
+      )
+    }
+  </dl>
+
+  {
+    (d.repo || d.demo) && (
+      <div class="mt-6 flex gap-4 text-sm">
+        {d.repo && (
+          <a href={d.repo} class="underline underline-offset-4 hover:no-underline">
+            View code
+          </a>
+        )}
+        {d.demo && (
+          <a href={d.demo} class="underline underline-offset-4 hover:no-underline">
+            Live demo
+          </a>
+        )}
+      </div>
+    )
+  }
+
+  <hr class="mt-10 border-neutral-200" />
+
+  <div class="prose prose-neutral prose-sm mt-10 max-w-[65ch] prose-headings:font-semibold prose-headings:tracking-tight prose-a:underline-offset-4 prose-table:text-sm">
+    <Content />
+  </div>
+</Base>

@@ -1,0 +1,71 @@
+---
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/about', label: 'About' },
+];
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const items = links.map((l) => {
+  const active =
+    l.href === '/' ? path === '/' : path === l.href || path.startsWith(l.href + '/');
+  return {
+    href: l.href,
+    label: l.label,
+    active,
+    desktopClass: active
+      ? 'font-medium text-neutral-900'
+      : 'text-neutral-500 hover:text-neutral-900',
+    mobileClass: active
+      ? 'block py-2 text-sm font-medium text-neutral-900'
+      : 'block py-2 text-sm text-neutral-500',
+  };
+});
+---
+
+<header class="border-b border-neutral-200">
+  <nav class="flex items-center justify-between py-5" aria-label="Main">
+    <a href="/" class="text-sm font-semibold tracking-tight">Hang Yang</a>
+
+    <ul class="hidden gap-7 text-sm sm:flex">
+      {items.map((item) => (
+        <li>
+          <a href={item.href} class={item.desktopClass}>{item.label}</a>
+        </li>
+      ))}
+    </ul>
+
+    <button
+      id="nav-toggle"
+      type="button"
+      class="-mr-2 p-2 sm:hidden"
+      aria-expanded="false"
+      aria-controls="nav-menu"
+      aria-label="Toggle menu"
+    >
+      <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <ul id="nav-menu" class="hidden pb-4 sm:hidden">
+    {items.map((item) => (
+      <li>
+        <a href={item.href} class={item.mobileClass}>{item.label}</a>
+      </li>
+    ))}
+  </ul>
+</header>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('nav-menu');
+
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    menu?.classList.toggle('hidden');
+  });
+</script>

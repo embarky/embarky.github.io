@@ -1,0 +1,112 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  home?: boolean;
+}
+
+const {
+  title,
+  description = 'Hang Yang — data science and information systems.',
+  home = false,
+} = Astro.props;
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/about', label: 'About' },
+];
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const items = links.map((l) => {
+  const active =
+    l.href === '/' ? path === '/' : path === l.href || path.startsWith(l.href + '/');
+  return {
+    href: l.href,
+    label: l.label,
+    cls: active ? 'font-medium text-neutral-900' : 'text-neutral-500 hover:text-neutral-900',
+  };
+});
+
+const social = [
+  { href: 'mailto:yhangg666@gmail.com', label: 'Email' },
+  { href: 'https://github.com/embarky', label: 'GitHub' },
+  { href: '/cv.pdf', label: 'CV' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <ClientRouter />
+  </head>
+
+  <body class="bg-white text-neutral-900 antialiased">
+    {
+      home ? (
+        <div class="mx-auto max-w-2xl px-6 py-24">
+          <h1 transition:name="identity-name" class="text-4xl font-semibold tracking-tight">
+            Hang Yang
+          </h1>
+
+          <p class="mt-5 text-lg leading-relaxed text-neutral-600">
+            MSc student in Information Systems, BSc in Data Science. I turn messy
+            operational data into models and interfaces people actually use.
+          </p>
+
+          <nav transition:name="identity-nav" class="mt-10 flex gap-6 text-sm" aria-label="Main">
+            {items.map((item) => (
+              <a href={item.href} class={item.cls}>{item.label}</a>
+            ))}
+          </nav>
+
+          <div transition:name="identity-social" class="mt-8 flex gap-5 text-sm text-neutral-500">
+            {social.map((s) => (
+              <a href={s.href} class="hover:text-neutral-900">{s.label}</a>
+            ))}
+          </div>
+
+          <div class="mt-16">
+            <slot />
+          </div>
+        </div>
+      ) : (
+        <div class="mx-auto max-w-5xl px-6 py-14 lg:flex lg:gap-16">
+          <aside class="lg:sticky lg:top-14 lg:h-fit lg:w-48 lg:shrink-0">
+            <h1 transition:name="identity-name" class="text-base font-semibold tracking-tight">
+              <a href="/">Hang Yang</a>
+            </h1>
+
+            <nav transition:name="identity-nav" class="mt-5 flex gap-4 text-sm lg:mt-6 lg:flex-col lg:gap-2" aria-label="Main">
+              {items.map((item) => (
+                <a href={item.href} class={item.cls}>{item.label}</a>
+              ))}
+            </nav>
+
+            <div transition:name="identity-social" class="mt-5 flex gap-4 text-sm text-neutral-500 lg:mt-8 lg:flex-col lg:gap-2">
+              {social.map((s) => (
+                <a href={s.href} class="hover:text-neutral-900">{s.label}</a>
+              ))}
+            </div>
+          </aside>
+
+          <main class="mt-12 min-w-0 flex-1 lg:mt-0">
+            <slot />
+          </main>
+        </div>
+      )
+    }
+  </body>
+</html>
