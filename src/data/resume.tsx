@@ -14,7 +14,7 @@ export const DATA = {
   description:
     "MSc student in Information Systems at HEC Lausanne and former data engineer in the automotive industry. I work where data, AI and business meet.",
   summary:
-    "I am studying for an [MSc in Information Systems and Digital Innovation](/#education) at HEC Lausanne, after a bachelor's in Data Science and Big Data Technology.\n\nBefore Lausanne I spent [a year at Dongfeng Special Commercial Vehicle](/#work), first as a data analyst intern, then as a data engineer: I predicted vehicle faults with XGBoost, built Power BI dashboards the R&D team used every day, and made the sensor-data pipelines faster and more reliable.\n\nAt UNIL I build [systems that connect business processes and technology](/#projects): an ERP integration for Odoo, an IoT air-quality assistant on Google Cloud, and a Jakarta EE rental platform.\n\nI am looking for an **industrial PhD** or a role in **data, analytics or AI** in Switzerland, where business and technology meet.",
+    "I am studying for an [MSc in Information Systems and Digital Innovation](/#education) at HEC Lausanne, after a bachelor's in Data Science and Big Data Technology.\n\nBefore Lausanne I spent [a year at Dongfeng Huashen](/#work), part of Dongfeng Special Commercial Vehicle, first as a data analyst intern, then as a data engineer: I predicted vehicle faults with XGBoost, built Power BI dashboards the R&D team used every day, and made the sensor-data pipelines faster and more reliable.\n\nAt UNIL I build [systems that connect business processes and technology](/#projects): an ERP integration for Odoo, an IoT air-quality assistant on Google Cloud, and a Jakarta EE rental platform.\n\nI am looking for an **industrial PhD** or a role in **data, analytics or AI** in Switzerland, where business and technology meet.",
   avatarUrl: "https://github.com/embarky.png",
   ogImage: "/og_image.png",
   sections: {
@@ -88,7 +88,7 @@ export const DATA = {
 
   work: [
     {
-      company: "Dongfeng Special Commercial Vehicle",
+      company: "Dongfeng Huashen (Dongfeng Special Commercial Vehicle)",
       href: "https://www.dfsv.com.cn/huashen.html",
       badges: [],
       location: "Shiyan, China",
@@ -100,7 +100,7 @@ export const DATA = {
         "- Re-designed the indexes of the vehicle-record tables in a MySQL master-slave setup, cutting query latency from 1.2 s to 0.4 s.\n- Designed data-integrity rules (VIN format, timestamp continuity) that resolved 50+ sensor-data misalignments per month.\n- Built Spark SQL batch jobs that standardised 10+ vehicle signal types into Parquet datasets for the algorithm team.",
     },
     {
-      company: "Dongfeng Special Commercial Vehicle",
+      company: "Dongfeng Huashen (Dongfeng Special Commercial Vehicle)",
       href: "https://www.dfsv.com.cn/huashen.html",
       badges: [],
       location: "Shiyan, China",
@@ -117,7 +117,7 @@ export const DATA = {
       school: "HEC Lausanne, University of Lausanne",
       href: "https://www.unil.ch/hec",
       degree: "MSc in Information Systems and Digital Innovation",
-      logoUrl: "https://www.google.com/s2/favicons?domain=unil.ch&sz=128",
+      logoUrl: "/logos/unil.svg",
       start: "2025",
       end: "2027 (expected)",
     },
