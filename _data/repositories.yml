@@ -1,14 +1,9 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - embarky
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - embarky/AuraSense-M5StackCore2
+  - embarky/odoo-sales-integration
+  - embarky/LuxuryCarRental
