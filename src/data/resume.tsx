@@ -14,7 +14,7 @@ export const DATA = {
   description:
     "MSc student in Information Systems at HEC Lausanne. I like working with data and building things where business and technology meet.",
   summary:
-    "I study [Information Systems and Digital Innovation](/#education) at HEC Lausanne, after a bachelor's in Data Science and Big Data Technology in China.\n\nBefore Lausanne I spent [a year at Dongfeng Huashen](/#work), part of Dongfeng Special Commercial Vehicle, working with truck sensor and fault data: predicting faults with XGBoost, building Power BI dashboards for the R&D team, and making the data pipelines faster and more reliable.\n\nThese days I enjoy [building small systems end to end](/#projects): an ERP integration for Odoo, an air-quality assistant that talks, and a car rental platform in Jakarta EE.",
+    "I study [Information Systems and Digital Innovation](/#education) at HEC Lausanne, after a bachelor's in Data Science and Big Data Technology in China.\n\nBefore Lausanne I spent [a year at Dongfeng Huashen](/#work), a commercial-vehicle maker in the Dongfeng Motor Group, working with truck sensor and fault data: predicting faults with XGBoost, building Power BI dashboards for the R&D team, and making the data pipelines faster and more reliable.\n\nThese days I enjoy [building small systems end to end](/#projects): an ERP integration for Odoo, an air-quality assistant that talks, and a car rental platform in Jakarta EE.",
   avatarUrl: "https://github.com/embarky.png",
   ogImage: "/og_image.png",
   sections: {
@@ -88,7 +88,7 @@ export const DATA = {
 
   work: [
     {
-      company: "Dongfeng Huashen (Dongfeng Special Commercial Vehicle)",
+      company: "Dongfeng Huashen (Dongfeng Motor Group)",
       href: "https://www.dfsv.com.cn/huashen.html",
       badges: [],
       location: "Shiyan, China",
@@ -100,7 +100,7 @@ export const DATA = {
         "- Re-designed the indexes of the vehicle-record tables in a MySQL master-slave setup, cutting query latency from 1.2 s to 0.4 s.\n- Designed data-integrity rules (VIN format, timestamp continuity) that resolved 50+ sensor-data misalignments per month.\n- Built Spark SQL batch jobs that standardised 10+ vehicle signal types into Parquet datasets for the algorithm team.",
     },
     {
-      company: "Dongfeng Huashen (Dongfeng Special Commercial Vehicle)",
+      company: "Dongfeng Huashen (Dongfeng Motor Group)",
       href: "https://www.dfsv.com.cn/huashen.html",
       badges: [],
       location: "Shiyan, China",
