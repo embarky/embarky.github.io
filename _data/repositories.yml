@@ -1,9 +1,0 @@
-github_users:
-  - embarky
-
-repo_description_lines_max: 2
-
-github_repos:
-  - embarky/AuraSense-M5StackCore2
-  - embarky/odoo-sales-integration
-  - embarky/LuxuryCarRental
