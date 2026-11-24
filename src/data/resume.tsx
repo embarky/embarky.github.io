@@ -12,9 +12,9 @@ export const DATA = {
   location: "Lausanne, Switzerland",
   locationLink: "https://www.google.com/maps/place/lausanne",
   description:
-    "MSc student in Information Systems at HEC Lausanne and former data engineer in the automotive industry. I work where data, AI and business meet.",
+    "MSc student in Information Systems at HEC Lausanne. I like working with data and building things where business and technology meet.",
   summary:
-    "I am studying for an [MSc in Information Systems and Digital Innovation](/#education) at HEC Lausanne, after a bachelor's in Data Science and Big Data Technology.\n\nBefore Lausanne I spent [a year at Dongfeng Huashen](/#work), part of Dongfeng Special Commercial Vehicle, first as a data analyst intern, then as a data engineer: I predicted vehicle faults with XGBoost, built Power BI dashboards the R&D team used every day, and made the sensor-data pipelines faster and more reliable.\n\nAt UNIL I build [systems that connect business processes and technology](/#projects): an ERP integration for Odoo, an IoT air-quality assistant on Google Cloud, and a Jakarta EE rental platform.\n\nI am looking for an **industrial PhD** or a role in **data, analytics or AI** in Switzerland, where business and technology meet.",
+    "I study [Information Systems and Digital Innovation](/#education) at HEC Lausanne, after a bachelor's in Data Science and Big Data Technology in China.\n\nBefore Lausanne I spent [a year at Dongfeng Huashen](/#work), part of Dongfeng Special Commercial Vehicle, working with truck sensor and fault data: predicting faults with XGBoost, building Power BI dashboards for the R&D team, and making the data pipelines faster and more reliable.\n\nThese days I enjoy [building small systems end to end](/#projects): an ERP integration for Odoo, an air-quality assistant that talks, and a car rental platform in Jakarta EE.",
   avatarUrl: "https://github.com/embarky.png",
   ogImage: "/og_image.png",
   sections: {
@@ -46,7 +46,7 @@ export const DATA = {
       enabled: true,
       label: "Contact",
       heading: "Get in Touch",
-      text: "Open to industrial PhD positions and data, analytics or AI roles in Switzerland. Write to me at [hang.yang@unil.ch](mailto:hang.yang@unil.ch).",
+      text: "Say hi at [hang.yang@unil.ch](mailto:hang.yang@unil.ch), or find my code on [GitHub](https://github.com/embarky).",
     },
   },
   photos: [],
