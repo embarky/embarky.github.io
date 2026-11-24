@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://embarky.github.io/sitemap.xml
