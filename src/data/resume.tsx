@@ -89,11 +89,11 @@ export const DATA = {
   work: [
     {
       company: "Dongfeng Special Commercial Vehicle",
-      href: "https://www.dfcv.com.cn",
+      href: "https://www.dfsv.com.cn/huashen.html",
       badges: [],
       location: "Shiyan, China",
       title: "Data Engineer",
-      logoUrl: "https://www.google.com/s2/favicons?domain=dfcv.com.cn&sz=128",
+      logoUrl: "/logos/dongfeng.webp",
       start: "Sep 2023",
       end: "Feb 2024",
       description:
@@ -101,11 +101,11 @@ export const DATA = {
     },
     {
       company: "Dongfeng Special Commercial Vehicle",
-      href: "https://www.dfcv.com.cn",
+      href: "https://www.dfsv.com.cn/huashen.html",
       badges: [],
       location: "Shiyan, China",
       title: "Data Analyst Intern",
-      logoUrl: "https://www.google.com/s2/favicons?domain=dfcv.com.cn&sz=128",
+      logoUrl: "/logos/dongfeng.webp",
       start: "Feb 2023",
       end: "Sep 2023",
       description:
@@ -125,7 +125,7 @@ export const DATA = {
       school: "China Three Gorges University",
       href: "https://www.ctgu.edu.cn",
       degree: "BEng in Data Science and Big Data Technology",
-      logoUrl: "https://www.google.com/s2/favicons?domain=ctgu.edu.cn&sz=128",
+      logoUrl: "/logos/ctgu.webp",
       start: "2019",
       end: "2023",
     },
