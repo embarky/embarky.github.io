@@ -11,10 +11,11 @@ export const DATA = {
   url: "https://embarky.github.io",
   location: "Lausanne, Switzerland",
   locationLink: "https://www.google.com/maps/place/lausanne",
-  description:
-    "MSc student in Information Systems at HEC Lausanne. I like working with data and building things where business and technology meet.",
+  description: "Information Systems student at HEC Lausanne.",
   summary:
-    "I study [Information Systems and Digital Innovation](/#education) at HEC Lausanne, after a bachelor's in Data Science and Big Data Technology in China.\n\nBefore Lausanne I spent [a year at Dongfeng Huashen](/#work), a commercial-vehicle maker in the Dongfeng Motor Group, working with truck sensor and fault data: predicting faults with XGBoost, building Power BI dashboards for the R&D team, and making the data pipelines faster and more reliable.\n\nThese days I enjoy [building small systems end to end](/#projects): an ERP integration for Odoo, an air-quality assistant that talks, and a car rental platform in Jakarta EE.",
+    "I like the space where data meets real businesses: messy sensor logs, ERP systems, small gadgets that talk back. It started with a year of truck data at Dongfeng, and I have been [building things end to end](/#projects) ever since.
+
+When I am not at a keyboard, I tend to show up somewhere random in the world.",
   avatarUrl: "https://github.com/embarky.png",
   ogImage: "/og_image.png",
   sections: {
